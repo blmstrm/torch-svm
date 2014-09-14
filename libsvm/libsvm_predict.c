@@ -67,7 +67,9 @@ void predict(lua_State *L, struct svm_model *model_, const int predict_probabili
 	double error = 0;
 	double sump = 0, sumt = 0, sumpp = 0, sumtt = 0, sumpt = 0;
 
-	int svm_type=svm_get_svm_type(model_);
+	//int svm_type=svm_get_svm_type(model_);
+	//Hard code svr
+	int svm_type=3;
 	int nr_class=svm_get_nr_class(model_);
 	double *prob_estimates=NULL;
 
@@ -261,8 +263,12 @@ static int libsvm_predict(lua_State *L)
 	int prob_estimate_flag = 0;
 	struct svm_model *model_;
 
+printf("nrhs is %d",nrhs);
+			
+
 	if(nrhs > 4 || nrhs < 2)
 	{
+			
 		svm_exit_with_help();
 		return 0;
 	}
