@@ -263,8 +263,6 @@ static int libsvm_predict(lua_State *L)
 	int prob_estimate_flag = 0;
 	struct svm_model *model_;
 
-printf("nrhs is %d",nrhs);
-			
 
 	if(nrhs > 4 || nrhs < 2)
 	{
@@ -294,8 +292,6 @@ printf("nrhs is %d",nrhs);
 
 			for(i=1;i<argc;i++)
 			{
-				// Print argument line to find out what is being fed in
-				printf("Argument: %c.",argv[i-1][1]);
 				
 				if(argv[i][0] != '-') break;
 				if(++i>=argc)
