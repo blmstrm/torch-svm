@@ -289,7 +289,7 @@ static int libsvm_predict(lua_State *L)
 			for(i=1;i<argc;i++)
 			{
 				// Print argument line to find out what is being fed in
-				printf("%c",argv[i][1]);
+				printf("Argument: %c.",argv[i-1][1]);
 				
 				if(argv[i][0] != '-') break;
 				if(++i>=argc)
